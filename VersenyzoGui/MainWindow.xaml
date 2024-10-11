@@ -1,0 +1,24 @@
+﻿<Window x:Class="VersenyzoGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VersenyzoGui"
+        mc:Ignorable="d"
+        Title="Versenyző GUI" Height="450" Width="800">
+    <Grid>
+        <Label Content="Versenyző neve:" HorizontalAlignment="Left" Margin="32,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="Versenyző pontszáma:" HorizontalAlignment="Left" Margin="32,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kieső legmagasabb pontszám:" HorizontalAlignment="Left" Margin="32,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kieső legalacsonyabb pontszám:" HorizontalAlignment="Left" Margin="32,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="A versenyző összesített pontszáma" HorizontalAlignment="Left" Margin="32,203,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Nev" HorizontalAlignment="Left" Margin="317,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Scores" HorizontalAlignment="Left" Margin="317,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Scores_TextChanged"/>
+        <Label x:Name="maxScore" Content="0" HorizontalAlignment="Left" Margin="334,169,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="minScore" Content="0" HorizontalAlignment="Left" Margin="334,199,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="overallScore" Content="0" HorizontalAlignment="Left" Margin="334,230,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="334,301,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="numbersCount" Content="0 db" HorizontalAlignment="Left" Margin="506,122,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
