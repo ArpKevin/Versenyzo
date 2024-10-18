@@ -9,6 +9,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows;
+using Versenyzo;
+using System.IO;
 
 namespace VersenyzoGui
 {
@@ -17,11 +19,19 @@ namespace VersenyzoGui
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static List<Contestant> contestants = new List<Contestant>();
+        public string src = @"..\..\..\..\Versenyzo\src\selejtezo.txt";
         public MainWindow()
         {
             InitializeComponent();
+            using StreamReader srSelejtezo = new(src);
 
+            while (!srSelejtezo.EndOfStream)
+            {
+                contestants.Add(new(srSelejtezo.ReadLine()));
+            }
         }
+
 
         private void Scores_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -54,6 +64,28 @@ namespace VersenyzoGui
 
             
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var line = Scores.Text.Trim();
+            var numbers = line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            var intNumbers = numbers.Select(int.Parse).ToList();
+
+            if (contestants.Select(c => c.Name).Contains(Nev.Text)) MessageBox.Show("Van már ilyen nevű versenyző!", "Hiba!");
+            else
+            {
+                if (intNumbers.Count != 6) MessageBox.Show("A pontszámok száma nem megfelelő!", "Hiba");
+                else
+                {
+                    using StreamWriter swSelejtezo = new(src, true);
+                    swSelejtezo.Write($"\n{Nev.Text};{string.Join(" ", intNumbers)}");
+                    MessageBox.Show("Az állomány bővítése sikeres volt!", "Üzenet");
+                    Nev.Clear();
+                    Scores.Clear();
+                }
+            }
         }
     }
 }

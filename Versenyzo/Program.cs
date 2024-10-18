@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,11 +7,12 @@ using System.Windows;
 
 namespace Versenyzo
 {
-    internal class Program
+    
+    public class Program
     {
+        public static List<Contestant> contestants = new List<Contestant>();
         static void Main(string[] args)
         {
-            List<Contestant> contestants = new();
             using StreamReader srSelejtezo = new(@"..\..\..\src\selejtezo.txt");
 
             while (!srSelejtezo.EndOfStream)

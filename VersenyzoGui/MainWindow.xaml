@@ -17,7 +17,7 @@
         <Label x:Name="maxScore" Content="0" HorizontalAlignment="Left" Margin="334,169,0,0" VerticalAlignment="Top"/>
         <Label x:Name="minScore" Content="0" HorizontalAlignment="Left" Margin="334,199,0,0" VerticalAlignment="Top"/>
         <Label x:Name="overallScore" Content="0" HorizontalAlignment="Left" Margin="334,230,0,0" VerticalAlignment="Top"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="334,301,0,0" VerticalAlignment="Top"/>
+        <Button Content="Versenyző hozzáadása" HorizontalAlignment="Left" Margin="334,301,0,0" VerticalAlignment="Top" Click="Button_Click"/>
         <Label x:Name="numbersCount" Content="0 db" HorizontalAlignment="Left" Margin="506,122,0,0" VerticalAlignment="Top"/>
 
     </Grid>

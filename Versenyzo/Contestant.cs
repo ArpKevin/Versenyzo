@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Versenyzo
 {
-    internal class Contestant
+    public class Contestant
     {
         public Contestant(string sor)
         {
