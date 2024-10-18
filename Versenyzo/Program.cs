@@ -10,15 +10,10 @@ namespace Versenyzo
     
     public class Program
     {
-        public static List<Contestant> contestants = new List<Contestant>();
         static void Main(string[] args)
         {
-            using StreamReader srSelejtezo = new(@"..\..\..\src\selejtezo.txt");
-
-            while (!srSelejtezo.EndOfStream)
-            {
-                contestants.Add(new(srSelejtezo.ReadLine()));
-            }
+            List<Contestant> contestants = new List<Contestant>();
+            contestants = Contestant.beolvasas();
 
             Console.WriteLine($"3. feladat: A versenyen {contestants.Count()} versenyző vett részt.");
 

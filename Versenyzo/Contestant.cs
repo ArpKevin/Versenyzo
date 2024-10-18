@@ -27,5 +27,17 @@ namespace Versenyzo
         {
             return $"Név: {Name}, pontok: {string.Join(", ", Scores)}";
         }
+
+        public static List<Contestant> beolvasas()
+        {
+            List<Contestant> list = [];
+            using StreamReader srSelejtezo = new(@"..\..\..\..\src\selejtezo.txt");
+
+            while (!srSelejtezo.EndOfStream)
+            {
+                list.Add(new(srSelejtezo.ReadLine()));
+            }
+            return list;
+        }
     }
 }
